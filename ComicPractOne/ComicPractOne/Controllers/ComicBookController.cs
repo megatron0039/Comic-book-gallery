@@ -4,13 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ComicPractOne.Controllers
+namespace ComicBookGallery.Controllers
+
 {
    public class ComicBookController : Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "Hello from the comic books controller!";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Saturday) 
+            {
+                return new RedirectResult("/");
+            }
+            return new RedirectResult("/");
+              
         }
     }
 }
